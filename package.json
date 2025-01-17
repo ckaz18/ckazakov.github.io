@@ -2,7 +2,6 @@
   "name": "ckazakov.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ckaz18.github.io/ckazakov.github.io",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -19,12 +18,12 @@
     "predeploy": "yarn run build",
     "build": "next build",
     "dev": "next dev",
-    "deploy": "gh-pages -d .next",
+    "export": "next export",
+    "deploy": "next build && next export && touch out/.nojekyll && gh-pages -d out --dotfiles",
     "lint": "next lint",
     "start": "next start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-
   },
   "eslintConfig": {
     "extends": [
