@@ -1,12 +1,7 @@
 
-const Resume = ({
-  children,
-}: {
-  children: React.ReactNode
-}) => {
+const Resume = () => {
   return (
     <section>
-      {children}
       Sup! This is my resume page
     </section>
   );
