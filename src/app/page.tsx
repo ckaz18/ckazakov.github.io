@@ -1,20 +1,9 @@
-import { Container } from "@mui/material";
-import Header from "components/header/header";
-import Link from "next/link";
+import { Container, Typography } from "@mui/material";
 
 export default function Page() {
   return (
-    <Container >
-      <h1>
-        Christi Kazakov
-      </h1>
-      <Link
-      href={{
-        pathname: '/resume',
-      }}
-    >
-      Resume
-    </Link>
-    </Container>
+    <Typography variant="h4" component="h1" gutterBottom>
+      Welcome to the Home page
+    </Typography>
   );
 }

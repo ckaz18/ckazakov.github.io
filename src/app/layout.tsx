@@ -1,6 +1,7 @@
 "use client";
 
 import { ThemeProvider } from "@emotion/react"
+import Header from "components/header/header";
 import theme from 'theme';
 
 export default function RootLayout({
@@ -13,6 +14,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeProvider theme={theme}>
+        <Header />
           {children}
         </ThemeProvider>
       </body>
