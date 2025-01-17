@@ -16,9 +16,10 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
+    "predeploy": "yarn run build",
     "build": "next build",
     "dev": "next dev",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d .next",
     "lint": "next lint",
     "start": "next start",
     "test": "react-scripts test",
