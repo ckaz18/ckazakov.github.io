@@ -1,7 +1,8 @@
 "use client";
 
 import { ThemeProvider } from "@emotion/react"
-import Header from "components/header/header";
+import { Container } from "@mui/material";
+import CustomHeader from "components/header/customHeader";
 import theme from 'theme';
 
 export default function RootLayout({
@@ -14,8 +15,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeProvider theme={theme}>
-        <Header />
+        <CustomHeader />
+          <Container sx={{ margin: '8 10 20 10'}}>
           {children}
+          </Container>
         </ThemeProvider>
       </body>
     </html>
