@@ -2,6 +2,7 @@ import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
 const theme = createTheme({
+  colorSchemes: { light: true, dark: true },
   cssVariables: true,
   palette: {
     primary: {

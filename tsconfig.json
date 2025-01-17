@@ -8,8 +8,13 @@
     "emitDeclarationOnly": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
-    "lib": [ "es6", "dom", "dom.iterable", "esnext",],
+    "jsx": "preserve",
+    "lib": [
+      "es6",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -17,14 +22,27 @@
     "noImplicitThis": true,
     "outDir": "dist",
     "resolveJsonModule": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
     "target": "esnext",
-    "types": ["web-vitals"],
+    "types": [
+      "web-vitals"
+    ],
+    "incremental": true
   },
-  "include": ["./src/**/*", "src/custom.d.ts"],
+  "include": [
+    "next-env.d.ts",
+    "./src/**/*",
+    "src/custom.d.ts",
+    ".next/types/**/*.ts"
+  ],
   "exclude": [
     "node_modules"
-]
+  ]
 }
