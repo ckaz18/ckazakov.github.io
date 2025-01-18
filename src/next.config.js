@@ -4,7 +4,7 @@
 const nextConfig = {
   output: 'export',
   basePath: '/ckazakov.github.io',
-  /* config options here */
+  assetPrefix: '/ckazakov.github.io/',
 }
  
 module.exports = nextConfig

@@ -76,6 +76,20 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
+      # DEBUG
+      - name: Debug - Show current directory
+        run: pwd
+
+      - name: Debug - List files
+        run: ls -la
+
+      - name: Debug - Show Next.js build output
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build --debug
+
+      - name: Debug - List files after build
+        run: ls -la
+
+      # END DEBUG
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
