@@ -8,52 +8,69 @@ import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.background.paper,
-  padding: theme.spacing(3),
-  height: '100%',
-}));
-
-const ContactItem = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  marginBottom: theme.spacing(2),
-}));
+import { envVariable } from "helpers/privateKeys";
+import { useEffect, useState } from "react";
+import { ContactItem, Item } from "./resume.styles";
 
 
 const Resume = () => {
+  const [contactInfo, setContactInfo] = useState({
+    email: '',
+    phone: '',
+    linkedIn: '',
+    github: ''
+  });
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const email = process.env.NEXT_PUBLIC_EMAIL || '';
+    const phone = process.env.NEXT_PUBLIC_PHONE || '';
+    const linkedIn = process.env.NEXT_PUBLIC_LINKEDIN || '';
+    const github = process.env.NEXT_PUBLIC_GITHUB || '';
+    console.log({ email, phone, linkedIn, github }); // Debugging line
+
+    setContactInfo({
+      email: envVariable.email,
+      phone: envVariable.phone,
+      linkedIn: envVariable.linkedIn,
+      github: envVariable.github,
+    });
+    setIsLoading(false);
+  }, []);
+
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-      <Grid2 container spacing={2}>
-         <Grid2 size={4} sx={{ xs: 12, md: 4,}}>
-         <Item elevation={3}>
-           <Typography variant='h4' gutterBottom>Contact Info</Typography>
-           <ContactItem>
-             <EmailIcon sx={{ mr: 2 }} />
-             <Link href="mailto:ckazakov18@gmail.com">ckazakov18@gmail.com</Link>
-           </ContactItem>
-           <ContactItem>
-             <LocalPhoneIcon sx={{ mr: 2 }} />
-             1+(303)-503-5168
-           </ContactItem>
-           <ContactItem>
-             <LinkedInIcon sx={{ mr: 2 }} />
-             <Link href="https://www.linkedin.com/in/ckazakov/" target="_blank">LinkedIn Profile</Link>
-           </ContactItem>
-           <ContactItem>
-             <GitHubIcon sx={{ mr: 2 }} />
-             <Link href="https://github.com/ckaz18" target="_blank">GitHub Profile</Link>
-           </ContactItem>
-         </Item>
-       </Grid2>
-        <Grid2 size={8}>
-        <Item>
-          {/* Right column content */}
+      {isLoading ? <>Loading...</> :
+        <Grid2 container spacing={2}>
+          <Grid2 size={4} sx={{ xs: 12, md: 4, }}>
+            <Item elevation={3}>
+              <Typography variant='h4' gutterBottom>Contact Info</Typography>
+              <ContactItem>
+                <EmailIcon sx={{ mr: 2 }} />
+                <Link href={`mailto:${contactInfo.email}`}>{contactInfo.email}</Link>
+              </ContactItem>
+              <ContactItem>
+                <LocalPhoneIcon sx={{ mr: 2 }} />
+                {contactInfo.phone}
+              </ContactItem>
+              <ContactItem>
+                <LinkedInIcon sx={{ mr: 2 }} />
+                <a href={`${contactInfo.linkedIn}`} target="_blank" rel="noopener noreferrer">LinkedIn Profile: {contactInfo.linkedIn}</a>
+              </ContactItem>
+              <ContactItem>
+                <GitHubIcon sx={{ mr: 2 }} />
+                <Link href={`${contactInfo.github}`} target="_blank">GitHub Profile</Link>
+              </ContactItem>
+            </Item>
+          </Grid2>
+          <Grid2 size={8}>
+            <Item>
+              {/* Right column content */}
 
-          </Item>
+            </Item>
+          </Grid2>
         </Grid2>
-      </Grid2>
+      }
     </Container>
   );
 }
