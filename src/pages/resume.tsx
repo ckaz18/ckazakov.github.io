@@ -1,7 +1,6 @@
 'use client';
 
-import { Container, Paper, Typography } from "@mui/material";
-import { styled } from '@mui/material/styles';
+import { Container, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Grid2";
 import Link from "next/link";
 import EmailIcon from '@mui/icons-material/Email';
@@ -10,7 +9,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { envVariable } from "helpers/privateKeys";
 import { useEffect, useState } from "react";
-import { ContactItem, Item } from "./resume.styles";
+import { ContactItem, Item } from "features/resume/resume.styles";
 
 
 const Resume = () => {
@@ -24,16 +23,16 @@ const Resume = () => {
 
   useEffect(() => {
     const email = process.env.NEXT_PUBLIC_EMAIL || '';
-    const phone = process.env.NEXT_PUBLIC_PHONE || '';
+    const phone = process.env.NEXT_PUBLIC_PHONENUMBER || '';
     const linkedIn = process.env.NEXT_PUBLIC_LINKEDIN || '';
     const github = process.env.NEXT_PUBLIC_GITHUB || '';
     console.log({ email, phone, linkedIn, github }); // Debugging line
 
     setContactInfo({
-      email: envVariable.email,
-      phone: envVariable.phone,
-      linkedIn: envVariable.linkedIn,
-      github: envVariable.github,
+      email,
+      phone,
+      linkedIn,
+      github
     });
     setIsLoading(false);
   }, []);
@@ -55,7 +54,7 @@ const Resume = () => {
               </ContactItem>
               <ContactItem>
                 <LinkedInIcon sx={{ mr: 2 }} />
-                <a href={`${contactInfo.linkedIn}`} target="_blank" rel="noopener noreferrer">LinkedIn Profile: {contactInfo.linkedIn}</a>
+                <a href={`${contactInfo.linkedIn}`} target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
               </ContactItem>
               <ContactItem>
                 <GitHubIcon sx={{ mr: 2 }} />
