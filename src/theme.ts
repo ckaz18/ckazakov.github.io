@@ -45,28 +45,46 @@ const theme = createTheme({
       'sans-serif'
     ].join(','),
     h1: {
-      fontSize: '2.5rem',
-      fontWeight: 500,
-    },
-    h2: {
       fontSize: '2rem',
       fontWeight: 500,
+      '@media (min-width:600px)': {
+        fontSize: '2.5rem',
+      },
     },
-    h3: {
-      fontSize: '1.75rem',
-      fontWeight: 500,
-    },
-    h4: {
+    h2: {
       fontSize: '1.5rem',
       fontWeight: 500,
+      '@media (min-width:600px)': {
+        fontSize: '2rem',
+      },
+    },
+    h3: {
+      fontSize: '1.3rem',
+      fontWeight: 500,
+      '@media (min-width:600px)': {
+        fontSize: '1.75rem',
+      },
+    },
+    h4: {
+      fontSize: '1rem',
+      fontWeight: 500,
+      '@media (min-width:600px)': {
+        fontSize: '1.5rem',
+      },
     },
     h5: {
-      fontSize: '1.25rem',
+      fontSize: '0.85rem',
       fontWeight: 500,
+      '@media (min-width:600px)': {
+        fontSize: '1.25rem',
+      },
     },
     h6: {
-      fontSize: '1rem',
+      fontSize: '0.5rem',
       fontWeight: 300,
+      '@media (min-width:600px)': {
+        fontSize: '1rem',
+      },
     },
     body1: {
       fontSize: '1rem',
@@ -76,11 +94,20 @@ const theme = createTheme({
       fontSize: '0.875rem',
       lineHeight: 1.43,
     },
+    
   },
   components: {
     MuiContainer: {
-
-    }
+      styleOverrides: {
+        root: {
+          padding: '1rem',
+          '@media (min-width:600px)': {
+            padding: '2rem',
+          },
+        },
+      },
+    },
+    
   }
 } as ThemeOptions);
 
