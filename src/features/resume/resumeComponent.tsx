@@ -108,7 +108,7 @@ const ResumeComponent: FC = () => {
                     <Typography variant='body1' sx={{ fontStyle: 'italic', fontSize: '0.75rem', fontWeight: 350 }} >
                       {experience.date}
                     </Typography>
-                    <Typography variant='body1' gutterBottom >
+                    <Typography variant='body2' gutterBottom >
                       <StyledList>
                         {experience.skills.map((skill) => (
                           <StyledListItem >
