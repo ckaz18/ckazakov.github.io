@@ -29,10 +29,11 @@ export const experienceInformation: ExperienceData[] = [{
      improving search algorithms with AWS Elasticsearch, Kafka, and Kubernetes.',
     'Developed APIs using NodeJS, TypeScript, and NestJS for web and mobile interfaces, \
     and configured Kafka Consumers to ingest data into Elasticsearch.',
-    'Transformed complex Excel application into efficient Python script, \
-    drastically reducing processing time and rectifying calculation errors, showcasing problem-solving skills.',
-    'Built telecom applications using NodeJS, Python, \
-    and Ansible for real-time test execution and logging on routers and modems utilizing webhooks.',
+    'Developed Python-based mineral tonnage estimation app for mining operations using pytest, SQL, and pandas, reducing processing time from 1 week to 20 minutes. \
+    Eliminated calculation errors and implemented CI/CD pipeline using GitHub Actions.',
+    'Engineered an advanced automated test harness for routers and modems at a major telecom company, integrating React/Node.js UI, \
+    Python testing scripts, and Ansible for real-time execution. \
+    This comprehensive system utilized webhooks for seamless communication, dramatically reducing testing duration from weeks to under an hour.',
     'Designed a Python API with AWS Lambda, S3, and DynamoDB to provide snow data for Colorado Winter Resorts.',
   ],
 }, {

@@ -74,6 +74,11 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Build with Next.js
+        env:
+          NEXT_PUBLIC_EMAIL: ${{secrets.NEXT_PUBLIC_EMAIL }}
+          NEXT_PUBLIC_PHONENUMBER: ${{ secrets.NEXT_PUBLIC_PHONENUMBER }}
+          NEXT_PUBLIC_LINKEDIN: ${{ secrets.NEXT_PUBLIC_LINKEDIN }}
+          NEXT_PUBLIC_GITHUB: ${{ secrets.NEXT_PUBLIC_GITHUB }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
       - name: Upload artifact

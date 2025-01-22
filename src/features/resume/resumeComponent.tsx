@@ -37,7 +37,7 @@ const ResumeComponent: FC = () => {
     <Box sx={{ mt: 4, mb: 4, display: 'flex', flexDirection: 'column', flexWrap: 'wrap', }} >
       {isLoading ? <>Loading...</> :
         <Grid2 container spacing={3} >
-          <Grid2 sx={{ width: '21rem' }} >
+          <Grid2 sx={{ width: '21rem', paddingBottom: '1rem' }} >
             <Item elevation={1}>
               <Box sx={{ borderBottom: '1px solid #ccc' }} >
                 <Typography variant='h5' gutterBottom >Contact Info</Typography>
@@ -70,7 +70,7 @@ const ResumeComponent: FC = () => {
               </Box>
             </Item >
           </Grid2>
-          <Grid2 size="grow" sx={{ minWidth: '21rem' }}>
+          <Grid2 size="grow" sx={{ minWidth: '21rem', paddingBottom: '1rem' }}>
             <Item elevation={1}>
               {/* Right column content */}
 
