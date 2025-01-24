@@ -6,18 +6,15 @@ const theme = createTheme({
   cssVariables: true,
   palette: {
     primary: {
-      main: '#424242',
-      light: '#ebebeb',
-      dark: '#060606',
-    },
-    secondary: {
-      main: '#e9e9e9',
+      main: '#5f43b2',
+      light: '#b1aebb',
+      dark: '#3a3153',
     },
     error: {
       main: red.A400,
     },
     grey: {
-      50: '#fafafa',
+      50: '#fefdfd',
       100: '#f5f5f5',
       200: '#eeeeee',
       300: '#e0e0e0',
@@ -26,7 +23,7 @@ const theme = createTheme({
       600: '#757575',
       700: '#616161',
       800: '#424242',
-      900: '#212121',
+      900: '#424242',
       A100: '#f5f5f5',
       A200: '#eeeeee',
       A400: '#bdbdbd',
@@ -118,5 +115,4 @@ const theme = createTheme({
 } as ThemeOptions);
 
 // = 0.25 * 2rem = 0.5rem = 8px
-
 export default theme;

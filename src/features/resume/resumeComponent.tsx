@@ -4,7 +4,6 @@ import Link from "next/link";
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { FC, useEffect, useState } from "react";
 import { ContactItem, Item, StyledList, StyledListItem } from "features/resume/resume.styles";
 import { experienceInformation } from "./resume.types";
@@ -34,7 +33,7 @@ const ResumeComponent: FC = () => {
   }, []);
 
   return (
-    <Box sx={{ mt: 4, mb: 4, display: 'flex', flexDirection: 'column', flexWrap: 'wrap', }} >
+    <Box alignItems='center' sx={{ mt: 4, mb: 4, display: 'flex', flexDirection: 'column', flexWrap: 'wrap', overflow: 'hidden', wordBreak: 'break-word', textOverflow: 'ellipsis',  }} margin='1rem' >
       {isLoading ? <>Loading...</> :
         <Grid2 container spacing={3} >
           <Grid2 sx={{ width: '21rem', paddingBottom: '1rem' }} >
@@ -44,10 +43,6 @@ const ResumeComponent: FC = () => {
                 <ContactItem>
                   <EmailIcon sx={{ mr: 2 }} />
                   <Link href={`mailto:${contactInfo.email}`}>{contactInfo.email}</Link>
-                </ContactItem>
-                <ContactItem>
-                  <LocalPhoneIcon sx={{ mr: 2 }} />
-                  {contactInfo.phone}
                 </ContactItem>
                 <ContactItem>
                   <LinkedInIcon sx={{ mr: 2 }} />

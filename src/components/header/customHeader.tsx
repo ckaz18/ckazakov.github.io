@@ -37,9 +37,9 @@ const CustomHeader = () => {
     <Toolbar
       color="primary"
       sx={{
-        margin: "8px",
-        backgroundColor: theme.palette.primary.main,
-        borderRadius: "5px",
+        margin: "1px",
+        background: `linear-gradient(90deg, ${theme.palette.primary.dark} 10%, ${theme.palette.primary.light} 90%)`,
+        borderRadius: "3px",
       }}
     >
       <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -62,7 +62,7 @@ const CustomHeader = () => {
           {isSmallScreen ? (
             <>
               <IconButton
-                color="secondary"
+                color="primary"
                 aria-label={item.name}
                 onClick={handleClick}
               >

@@ -1,40 +1,31 @@
-import newStyled from "@emotion/styled";
 import { FC } from "react";
 import selfie from '../../../public/selfie.jpg';
 import Image from "next/image";
-
-
-const HeroContainer = newStyled.div`
-  display: flex;
-  flex-direction: column;
-  padding-top: 5%;
-  align-items: center;
-  height: 100vh;
-  background-color: #f8f8f8;
-  text-align: center;
-`;
-
-const HeroTitle = newStyled.h1`
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 1rem;
-`;
-
-const HeroSubtitle = newStyled.p`
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 2rem;
-`;
-
+import { Box, Typography, useTheme } from "@mui/material";
 
 const Homepage: FC = () => {
+  const theme = useTheme();
+
   return (
-    <HeroContainer>
-    <HeroTitle>Hi! My name is Christi Kazakov</HeroTitle>
-    <HeroSubtitle>I am a full stack software engineer</HeroSubtitle>
-    <Image src={selfie} alt='Selfie' width={250} style={{ borderRadius: '25%', height: 'auto' }} ></Image>
-    <HeroSubtitle>This is a work in progress...</HeroSubtitle>
-  </HeroContainer>
+    <Box 
+      alignItems='center'
+      flexDirection='column'
+      height='100vh'
+      paddingTop='5%'
+      sx={{ background: `linear-gradient(90deg, ${theme.palette.primary.dark} 10%, ${theme.palette.primary.light} 90%)` }}
+      textAlign='center'
+      borderRadius='3px'
+
+    >
+    <Typography variant='h1' style={{backgroundColor: 'transparent important!', color: theme.palette.grey[300]}}>
+      Hi, I'm Christi Kazakov
+    </Typography>
+    <Typography variant='h4' paddingTop='1em' style={{color: theme.palette.grey[300]}} >
+      Full Stack Engineer | React | Node | Typescript 
+    </Typography>
+    <Image src={selfie} alt='Selfie' width={250} style={{ margin: '1.75rem', borderRadius: '25%', height: 'auto' }} ></Image>
+    <Typography variant='h5' marginBottom='2rem' style={{color: theme.palette.grey[300]}} >This is a work in progress...</Typography>
+  </Box>
   );
 };
 
