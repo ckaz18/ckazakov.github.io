@@ -1,5 +1,4 @@
 import {
-  Button,
   IconButton,
   Menu,
   MenuItem,
@@ -38,7 +37,7 @@ const CustomHeader = () => {
       color="primary"
       sx={{
         margin: "1px",
-        background: `linear-gradient(90deg, ${theme.palette.primary.dark} 10%, ${theme.palette.primary.light} 90%)`,
+        background: 'transparent',
         borderRadius: "3px",
       }}
     >

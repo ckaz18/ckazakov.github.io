@@ -12,7 +12,6 @@ const Homepage: FC = () => {
       flexDirection='column'
       height='100vh'
       paddingTop='5%'
-      sx={{ background: `linear-gradient(90deg, ${theme.palette.primary.dark} 10%, ${theme.palette.primary.light} 90%)` }}
       textAlign='center'
       borderRadius='3px'
 
