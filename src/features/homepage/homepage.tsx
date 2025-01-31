@@ -3,7 +3,7 @@ import selfie from '../../../public/selfie.jpg';
 import Image from "next/image";
 import { Box, Typography, useTheme } from "@mui/material";
 
-const Homepage: FC = () => {
+export const Homepage: FC = () => {
   const theme = useTheme();
 
   return (
@@ -28,4 +28,3 @@ const Homepage: FC = () => {
   );
 };
 
-export default Homepage;

@@ -1,10 +1,8 @@
-
-import Homepage from "features/homepage/homepage";
+import { Homepage } from "features/homepage";
 
 export default function Page() {
 
   return (
- 
     <Homepage />
   );
 }

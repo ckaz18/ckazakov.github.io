@@ -1,6 +1,7 @@
 'use client';
 
-import ResumeComponent from "features/resume/resumeComponent";
+import { ResumeComponent } from "features/resume";
+
 
 const Resume = () => {
   return (

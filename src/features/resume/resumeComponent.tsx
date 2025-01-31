@@ -8,7 +8,7 @@ import { FC, useEffect, useState } from "react";
 import { ContactItem, Item, StyledList, StyledListItem } from "features/resume/resume.styles";
 import { experienceInformation } from "./resume.types";
 
-const ResumeComponent: FC = () => {
+export const ResumeComponent: FC = () => {
   const [contactInfo, setContactInfo] = useState({
     email: '',
     phone: '',
@@ -122,5 +122,3 @@ const ResumeComponent: FC = () => {
     </Box>
   );
 }
-
-export default ResumeComponent;

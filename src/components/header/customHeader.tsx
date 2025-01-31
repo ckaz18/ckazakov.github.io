@@ -7,7 +7,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { StyledButton } from "components/customHeader.style";
+import { StyledButton } from "components/header/customHeader.style";
 import Link from "next/link";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -18,7 +18,7 @@ interface NavMenuItems {
 }
 const navItems: NavMenuItems[] = [{ name: "Resume", path: "resume" }];
 
-const CustomHeader = () => {
+export const CustomHeader = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -86,4 +86,3 @@ const CustomHeader = () => {
   );
 };
 
-export default CustomHeader;

@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@emotion/react";
-import CustomHeader from "components/header/customHeader";
+import { CustomHeader } from "components/header";
 import { AppProps } from "next/app";
 import theme from 'theme';
 
